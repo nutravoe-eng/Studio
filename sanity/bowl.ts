@@ -17,6 +17,13 @@ export const bowl = {
       validation: (Rule: any) => Rule.required(),
     },
     {
+      name: "category",
+      title: "Category",
+      type: "reference",
+      to: [{ type: "category" }],
+      description: "Which menu section this bowl appears under",
+    },
+    {
       name: "tagline",
       title: "Tagline",
       type: "string",
