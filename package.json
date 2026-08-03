@@ -2,12 +2,19 @@
   "name": "nutravoe-studio",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "sanity dev",
     "build": "sanity build",
-    "deploy": "sanity deploy"
+    "deploy": "sanity deploy",
+    "migrate:subscription-pricing": "node scripts/migrate-subscription-plan-pricing.js",
+    "seed:bowls": "node --env-file=.env seed-sanity.mjs",
+    "seed:plans": "node --env-file=.env seed-plans.mjs"
   },
   "dependencies": {
+    "@sanity/client": "^7.20.0",
     "@sanity/vision": "^5.18.0",
     "react": "^19.2.2",
     "react-dom": "^19.2.2",
